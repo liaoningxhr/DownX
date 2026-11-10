@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="9dp"
+    android:paddingRight="9dp"
+    android:paddingBottom="9dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_sheet"
+        android:orientation="vertical"
+        android:paddingTop="12dp"
+        android:paddingBottom="6dp">
+
+        <!-- 顶部：文件名 + 关闭 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="19dp"
+            android:paddingRight="9dp">
+
+            <View
+                android:layout_width="6dp"
+                android:layout_height="6dp"
+                android:background="@drawable/bg_dot_on" />
+
+            <TextView
+                android:id="@+id/sheetTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="9dp"
+                android:layout_weight="1"
+                android:ellipsize="middle"
+                android:maxLines="1"
+                android:text="已下载的文件"
+                android:textColor="#8E8E99"
+                android:textSize="12sp" />
+
+            <ImageView
+                android:id="@+id/sheetClose"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/bg_sheet_tile_press"
+                android:clickable="true"
+                android:focusable="true"
+                android:padding="9dp"
+                android:src="@drawable/ic_x"
+                android:tint="#6E6E7A" />
+        </LinearLayout>
+
+        <!-- 四宫格快捷操作 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="7dp"
+            android:paddingTop="6dp"
+            android:paddingRight="7dp"
+            android:paddingBottom="2dp">
+
+            <LinearLayout
+                android:id="@+id/actWx"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/bg_sheet_tile_press"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:paddingTop="9dp"
+                android:paddingBottom="9dp">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/bg_tile_wx"
+                    android:padding="14dp"
+                    android:src="@drawable/ic_wx"
+                    android:tint="#4ADE80" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:text="微信"
+                    android:textColor="#E6E6EE"
+                    android:textSize="11sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/actShare"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/bg_sheet_tile_press"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:paddingTop="9dp"
+                android:paddingBottom="9dp">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/bg_tile_blue"
+                    android:padding="14dp"
+                    android:src="@drawable/ic_share_node"
+                    android:tint="#6FA8FF" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:text="其他应用"
+                    android:textColor="#E6E6EE"
+                    android:textSize="11sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/actPlay"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/bg_sheet_tile_press"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:paddingTop="9dp"
+                android:paddingBottom="9dp">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/bg_tile_violet"
+                    android:padding="14dp"
+                    android:src="@drawable/ic_play3"
+                    android:tint="#B69CFF" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:text="播放"
+                    android:textColor="#E6E6EE"
+                    android:textSize="11sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/actPage"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/bg_sheet_tile_press"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:paddingTop="9dp"
+                android:paddingBottom="9dp">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/bg_tile_teal"
+                    android:padding="14dp"
+                    android:src="@drawable/ic_ext"
+                    android:tint="#5EE7D8" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:text="原帖"
+                    android:textColor="#E6E6EE"
+                    android:textSize="11sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/actMulti"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/bg_sheet_tile_press"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:paddingTop="9dp"
+                android:paddingBottom="9dp">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/bg_tile_neutral"
+                    android:padding="14dp"
+                    android:src="@drawable/ic_check_square"
+                    android:tint="#FFC86B" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:text="多选"
+                    android:textColor="#E6E6EE"
+                    android:textSize="11sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="19dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="19dp"
+            android:layout_marginBottom="6dp"
+            android:background="@drawable/bg_sheet_divider" />
+
+        <!-- 隐藏 / 放回 -->
+        <LinearLayout
+            android:id="@+id/rowHide"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginLeft="7dp"
+            android:layout_marginRight="7dp"
+            android:background="@drawable/bg_sheet_row_press"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="8dp"
+            android:paddingRight="12dp">
+
+            <ImageView
+                android:id="@+id/iconHide"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:background="@drawable/bg_row_icon"
+                android:padding="7dp"
+                android:src="@drawable/ic_eye_off"
+                android:tint="#C9C9D6" />
+
+            <TextView
+                android:id="@+id/txtHide"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_weight="1"
+                android:text="从相册隐藏这一条"
+                android:textColor="#F2F2F7"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/hintHide"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="相册里不再出现"
+                android:textColor="#5E5E68"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+        <!-- 只删记录 -->
+        <LinearLayout
+            android:id="@+id/rowDelRecord"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginLeft="7dp"
+            android:layout_marginRight="7dp"
+            android:background="@drawable/bg_sheet_row_press"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="8dp"
+            android:paddingRight="12dp">
+
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:background="@drawable/bg_row_icon"
+                android:padding="7dp"
+                android:src="@drawable/ic_trash_line"
+                android:tint="#C9C9D6" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_weight="1"
+                android:text="删除这条记录"
+                android:textColor="#F2F2F7"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="文件保留"
+                android:textColor="#5E5E68"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+        <!-- 记录 + 文件 -->
+        <LinearLayout
+            android:id="@+id/rowDelFile"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginLeft="7dp"
+            android:layout_marginRight="7dp"
+            android:background="@drawable/bg_sheet_row_press"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="8dp"
+            android:paddingRight="12dp">
+
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:background="@drawable/bg_row_icon_red"
+                android:padding="7dp"
+                android:src="@drawable/ic_trash_solid"
+                android:tint="#FF7A7E" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_weight="1"
+                android:text="删除这条记录及文件"
+                android:textColor="#FF7A7E"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="释放空间"
+                android:textColor="#7A4A4E"
+                android:textSize="10sp" />
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="9dp"
+    android:paddingRight="9dp"
+    android:paddingBottom="9dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_sheet"
+        android:orientation="vertical"
+        android:paddingTop="12dp"
+        android:paddingBottom="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="19dp"
+            android:paddingRight="9dp">
+
+            <View
+                android:layout_width="6dp"
+                android:layout_height="6dp"
+                android:background="@drawable/bg_dot_on" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="9dp"
+                android:text="播放速度"
+                android:textColor="#F2F2F7"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvCurSpeed"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="当前 1.0x"
+                android:textColor="#5E5E68"
+                android:textSize="11sp" />
+
+            <ImageView
+                android:id="@+id/speedClose"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/bg_sheet_tile_press"
+                android:clickable="true"
+                android:focusable="true"
+                android:padding="9dp"
+                android:src="@drawable/ic_x"
+                android:tint="#6E6E7A" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/speedRows"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="9dp"
+            android:paddingTop="6dp"
+            android:paddingRight="9dp"
+            android:paddingBottom="2dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="2dp"
+            android:gravity="center"
+            android:text="按住画面 2 倍速 · 按住上滑锁定"
+            android:textColor="#5E5E68"
+            android:textSize="10sp" />
+    </LinearLayout>
+</FrameLayout>

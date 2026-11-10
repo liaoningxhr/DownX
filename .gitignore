@@ -1,0 +1,42 @@
+# ===== 绝不入库 =====
+# 签名文件与口令（丢了就无法给已装用户升级，必须自己备份，不能进仓库）
+/keys/
+# 工具链：JDK / SDK / Gradle / 依赖缓存 / 反编译器 / 浏览器内核（约 1.8 GB，可重新下载）
+/toolchain/
+# 本机 SDK 路径
+/app/local.properties
+
+# ===== 构建产物 =====
+/app/app/build/
+/app/build/
+/app/.gradle/
+/releases/
+*.apk
+*.idsig
+*.class
+
+# ===== 调试临时文件 =====
+_*
+*.log
+/tests/.shots/
+# 各验证台的产物：临时分片、编译输出、生成的大文件（speed 的 200MB 样本曾经误入库）
+/tests/*/work/
+/tests/*/work-real/
+/tests/*/out/
+/tests/chunked/work/
+/tests/chunked/out/
+# 验证台运行时会从 app 复制一份源码副本，不留档（源码只留一份）
+/tests/*/src/com/
+
+# ===== 系统垃圾 =====
+.DS_Store
+Thumbs.db
+
+# 交付给用户自己备份的目录（含签名与令牌，绝不入库）
+/交付/
+
+# YunX 参考源码 clone（第三方仓库，不入库）
+/tests/yunx-src/
+
+# 验证台输出
+/tests/*/result.txt

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 打赏气泡：琥珀→珊瑚的横向渐变，圆角拉到最大成胶囊，外圈一道半透明白边做出"气泡膜"的质感。
+     光晕用负 inset 的径向渐变层做在背景里，随文字自适应尺寸——
+     千万别再用独立的 match_parent View 做光晕：radial shape 没有固有尺寸，
+     塞进 wrap_content 容器会被测成整屏可用高度，直接把卡片撑爆。 -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:left="-8dp"
+        android:top="-8dp"
+        android:right="-8dp"
+        android:bottom="-8dp">
+        <shape android:shape="rectangle">
+            <gradient
+                android:type="radial"
+                android:gradientRadius="46dp"
+                android:centerX="0.5"
+                android:centerY="0.5"
+                android:startColor="#8CFFA24D"
+                android:endColor="#00FFA24D" />
+            <corners android:radius="40dp" />
+        </shape>
+    </item>
+    <item
+        android:left="5dp"
+        android:top="5dp"
+        android:right="5dp"
+        android:bottom="5dp">
+        <shape android:shape="rectangle">
+            <gradient
+                android:angle="0"
+                android:startColor="#FFD48F"
+                android:centerColor="#FFA95C"
+                android:endColor="#FF7A45"
+                android:type="linear" />
+            <corners android:radius="40dp" />
+            <stroke android:width="1dp" android:color="#59FFFFFF" />
+        </shape>
+    </item>
+</layer-list>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingStart="20dp"
+    android:paddingTop="20dp"
+    android:paddingEnd="20dp"
+    android:paddingBottom="16dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="微信赞赏 · 请作者喝杯咖啡"
+        android:textColor="#F2F2F7"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:gravity="center"
+        android:lineSpacingExtra="3dp"
+        android:text="赞赏完全自愿，单笔 1～200 元，档位金额可改输入\n不打赏也完全不影响使用 ☕"
+        android:textColor="#8E8E99"
+        android:textSize="12sp" />
+
+    <ImageView
+        android:id="@+id/imgQr"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/bg_card"
+        android:contentDescription="微信赞赏码"
+        android:src="@drawable/donate_qr" />
+
+    <TextView
+        android:id="@+id/btnSaveQr"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:layout_marginTop="14dp"
+        android:background="@drawable/bg_ok_btn"
+        android:gravity="center"
+        android:text="保存赞赏码到相册"
+        android:textColor="#F2F2F7"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="保存后在微信里「扫一扫」从相册选取即可"
+        android:textColor="#5E5E68"
+        android:textSize="11sp" />
+</LinearLayout>
