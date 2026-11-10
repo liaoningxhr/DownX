@@ -1,0 +1,33 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.downx.app'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.downx.app"
+        minSdk 24
+        targetSdk 34
+        // 版本号照常迭代，界面上要能看出新旧（用户 2026-11-09：不能永远写 1.0.0，
+        // 只是"这次"满意 1.0.0 这个号）。
+        // 规则：versionCode 每次发版 +1，必须单调递增，否则 Android 拒绝覆盖安装；
+        //      versionName 同步递增（81 这次定为 1.0.0，下一版 1.0.1，再到 1.1.0 …）。
+        versionCode 91
+        versionName "1.1.1"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
+// 零第三方依赖：不用广告 SDK、不用统计 SDK，纯净实现
+dependencies {
+}

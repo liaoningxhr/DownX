@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 解锁页：默认只显示欢迎 + 指纹，不摆密码键盘 -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_lock_wall">
+
+    <!-- 顶部柔光 -->
+    <View
+        android:layout_width="560dp"
+        android:layout_height="560dp"
+        android:layout_gravity="top|center_horizontal"
+        android:layout_marginTop="-250dp"
+        android:background="@drawable/bg_lock_glow" />
+
+    <!-- 欢迎 + 指纹 -->
+    <LinearLayout
+        android:id="@+id/welcomeBox"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp">
+
+        <FrameLayout
+            android:id="@+id/logoBox"
+            android:layout_width="112dp"
+            android:layout_height="112dp">
+
+            <View
+                android:layout_width="112dp"
+                android:layout_height="112dp"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_logo_glow" />
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_icon_round"
+                android:clipToOutline="true"
+                android:contentDescription="DownX"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_launcher_fg" />
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:letterSpacing="0.14"
+            android:text="DownX"
+            android:textColor="#F7F7FB"
+            android:textSize="27sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:letterSpacing="0.08"
+            android:text="欢迎回来"
+            android:textColor="@color/text_dim"
+            android:textSize="13sp" />
+
+        <FrameLayout
+            android:layout_width="128dp"
+            android:layout_height="128dp"
+            android:layout_marginTop="40dp">
+
+            <View
+                android:id="@+id/bioRing"
+                android:layout_width="112dp"
+                android:layout_height="112dp"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_bio_ring" />
+
+            <ImageView
+                android:id="@+id/btnBio"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_bio_btn"
+                android:contentDescription="指纹解锁"
+                android:padding="28dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_fingerprint" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/tvBioHint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="轻触指纹解锁"
+            android:textColor="@color/text_dim"
+            android:textSize="12.5sp" />
+
+        <TextView
+            android:id="@+id/btnUsePin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:paddingStart="18dp"
+            android:paddingTop="12dp"
+            android:paddingEnd="18dp"
+            android:paddingBottom="12dp"
+            android:text="使用密码"
+            android:textColor="#6E6E7A"
+            android:textSize="11.5sp" />
+    </LinearLayout>
+
+    <!-- 密码键盘（只有需要时才出现） -->
+    <LinearLayout
+        android:id="@+id/pinBox"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/bg_icon_round"
+            android:clipToOutline="true"
+            android:contentDescription="DownX"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_launcher_fg" />
+
+        <TextView
+            android:id="@+id/lockTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="输入密码"
+            android:textColor="@color/text"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/lockTips"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:textColor="@color/text_faint"
+            android:textSize="12sp" />
+
+        <LinearLayout
+            android:id="@+id/lockDots"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:gravity="center"
+            android:orientation="horizontal" />
+
+        <GridLayout
+            android:id="@+id/keypad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:columnCount="3"
+            android:rowCount="4" />
+
+        <!-- 4 位密码输完点它确认；6 位输满会自动跳过这个按钮 -->
+        <TextView
+            android:id="@+id/btnPinOk"
+            android:layout_width="132dp"
+            android:layout_height="44dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_ok_btn_sel"
+            android:gravity="center"
+            android:text="确定"
+            android:textColor="#FFFFFF"
+            android:textSize="14.5sp"
+            android:textStyle="bold"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/btnBackBio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:paddingStart="16dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="10dp"
+            android:text="改用指纹"
+            android:textColor="@color/accent"
+            android:textSize="12.5sp"
+            android:visibility="gone" />
+    </LinearLayout>
+</FrameLayout>
